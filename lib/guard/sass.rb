@@ -1,5 +1,5 @@
-require 'sass'
-require 'sass/plugin'
+require 'sassc'
+require 'sassc/plugin'
 
 require 'guard'
 require 'guard/plugin'
