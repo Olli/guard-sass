@@ -63,7 +63,7 @@ module Guard
             @formatter.success "#{message}", :notification => message, :time => time
             changed_files << css_file
 
-          rescue ::Sass::SyntaxError => e
+          rescue ::SassC::SyntaxError => e
             message = (options[:noop] ? 'validation' : 'rebuild') + " of #{file} failed"
             errors << message
             @formatter.error "Sass > #{e.sass_backtrace_str(file)}", :notification => message
@@ -80,7 +80,7 @@ module Guard
           :filesystem_importer => Importer,
         }.merge(options)
 
-        ::Sass::Engine.for_file(file, sass_options).render
+        ::SassC::Engine.for_file(file, sass_options).render
       end
 
       # @param file [String]
