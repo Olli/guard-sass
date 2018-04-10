@@ -18,7 +18,7 @@ module Guard
       :debug_info   => false,
       :noop         => false,
       :hide_success => false,
-      :load_paths   => ::Sass::Plugin.template_location_array.map(&:first)
+      :load_paths   => ::SassC::Plugin.template_location_array.map(&:first)
     }
 
     # @param options [Hash]
@@ -108,9 +108,9 @@ module Guard
         deps = []
          begin
            # Get dependencies of file
-           deps = ::Sass::Engine.for_file(file, @options).dependencies.collect! {|dep| dep.options[:filename] }
+           deps = ::SassC::Engine.for_file(file, @options).dependencies.collect! {|dep| dep.options[:filename] }
 
-         rescue ::Sass::SyntaxError => e
+         rescue ::SassC::SyntaxError => e
            message = "Resolving partial owners of #{file} failed"
            @formatter.error "Sass > #{e.sass_backtrace_str(file)}", :notification => message
          end
