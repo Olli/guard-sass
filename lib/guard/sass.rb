@@ -1,5 +1,4 @@
 require 'sassc'
-require 'sassc/plugin'
 
 require 'guard'
 require 'guard/plugin'
@@ -18,7 +17,7 @@ module Guard
       :debug_info   => false,
       :noop         => false,
       :hide_success => false,
-      :load_paths   => ::SassC::Plugin.template_location_array.map(&:first)
+      :load_paths   => "sass" #::SassC::Plugin.template_location_array.map(&:first)
     }
 
     # @param options [Hash]
