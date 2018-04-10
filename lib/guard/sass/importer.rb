@@ -1,8 +1,8 @@
-require 'sass/importers/filesystem'
+require 'sassc/importers/filesystem'
 
 module Guard
   class Sass
-    class Importer < ::Sass::Importers::Filesystem
+    class Importer < ::SassC::Importers::Filesystem
       def extensions
         {
           'css'          => :scss,
