@@ -123,4 +123,4 @@ module Guard
   end
 end
 
-#require 'guard/sass/importer'
+require 'guard/sass/importer'
